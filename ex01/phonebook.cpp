@@ -18,6 +18,8 @@ int main(){
 	int i = 0;
 	int contact_count = 0;
 	Save_number *contact[8];
+	system("clear");
+    std::cout << "welcome to your phonebook do shit ADD, SEARCH, EXIT\n";
 	//contact = new Save_number();
 	while (i < 9){
 		contact[i] = new Save_number;
@@ -28,14 +30,25 @@ int main(){
 		i = run_phonebook();
 		switch (i){
 		case 1:
-		add_contact(contact[contact_count]);
-		putout(i);
-		contact_count++;
 		// std::cout << "fuck";
+		add_contact(contact[contact_count]);
+		contact_count++;
+		std::cout << "welcome to your phonebook do shit ADD, SEARCH, EXIT contact count " << contact_count << "\n";
 		break;
 		case 2:
+		if (contact_count > 0){
+			preview_phonebook(contact, contact_count);
+        	show_infomation(contact, contact_count);
+			std::cout << "welcome back do shit ADD, SEARCH, EXIT contact count " << contact_count << "\n";
+		}
+		else
+			preview_phonebook(contact, contact_count);
+		break;
+		case 0:
 		// std::cout << "fuck";
-		
+		break;
+		default:
+		std::cout << "NO DIPSHIT that is not a command try again ADD SEARCH EXIT\n";			
 		break;
 		}
 	}

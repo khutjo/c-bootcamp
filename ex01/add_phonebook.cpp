@@ -28,13 +28,24 @@
 	void putout(int line){
 	std::string fields[12] = {"first name","last name","nickname","login",
 							"postal address","email address","phone number",
-							"birthday date","favorite","meal","underwear color",
+							"birthday date","favorite anything","resent meal","underwear color",
 							"darkest secret"};
-		std::cout << "Enter you"<< fields[line] << ":  ";
+		std::cout << "Enter you "<< fields[line] << ":  ";
 	}
 
-void bridge(Save_number *contact){
-    
+void bridge(Save_number *contact, std::string command, int i){
+	contact->setfirst_name(command, i);
+	contact->setlast_name(command, i);
+	contact->setnickname(command, i);
+	contact->setlogin(command, i);
+	contact->setpostal_address(command, i);
+	contact->setemail_address(command, i);
+	contact->setphone_number(command, i);
+	contact->setbirthday_date(command, i);
+	contact->setfavorite(command, i);
+	contact->setmeal(command, i);
+	contact->setunderwear_color(command, i);
+	contact->setdarkest_secret(command, i);
 }
 
 void add_contact(Save_number *contact){
@@ -42,13 +53,19 @@ void add_contact(Save_number *contact){
 	Save_number hold;
 	std::string command;
 	
-	std::cout << command;
+	// std::cout << command;
 // std::cout << "hello";
 	while (i < 12){
 		system("clear");
-		// putout(i);
+       std::cout << "Add Contact\n";
+		putout(i);
 		std::getline(std::cin, command, '\n');
-		contact->set(command);
+		bridge(contact, command, i);
 		i++;
 	}
+	system("clear");
+	usleep(1000000);
+    std::cout << "Contact Added\n";
+	usleep(1000000);
+	system("clear");
 }

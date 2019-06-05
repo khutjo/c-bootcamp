@@ -15,25 +15,42 @@
 
 #include <iostream>
 #include <string>
+#include <stdlib.h>
+#include <unistd.h>
 
 class Save_number{
 
 	public:
   	// string get(){return first_name;)
-  	void Save_number::setfirst_name(std::string n, int stat);
-    void Save_number::setfirst_name(std::string n, int stat);
-  	void Save_number::setlast_name(std::string n, int stat);
-  	void Save_number::setnickname(std::string n, int stat);
-  	void Save_number::setlogin(std::string n, int stat);
-  	void Save_number::setpostal_address(std::string n, int stat);
-  	void Save_number::setemail_address(std::string n, int stat);
-  	void Save_number::setphone_number(std::string n, int stat);
-  	void Save_number::setbirthday_date(std::string n, int stat);
-  	void Save_number::setfavorite(std::string n, int stat);
-  	void Save_number::setmeal(std::string n, int stat);
-  	void Save_number::setunderwear_color(std::string n, int stat);
-  	void Save_number::setdarkest_secret(std::string n, int stat);
-	  
+  	void setfirst_name(std::string n, int stat);
+  	void setlast_name(std::string n, int stat);
+  	void setnickname(std::string n, int stat);
+  	void setlogin(std::string n, int stat);
+  	void setpostal_address(std::string n, int stat);
+  	void setemail_address(std::string n, int stat);
+  	void setphone_number(std::string n, int stat);
+  	void setbirthday_date(std::string n, int stat);
+  	void setfavorite(std::string n, int stat);
+  	void setmeal(std::string n, int stat);
+  	void setunderwear_color(std::string n, int stat);
+  	void setdarkest_secret(std::string n, int stat);
+	
+
+
+    std::string getfirst_name();
+  	std::string getlast_name();
+  	std::string getnickname();
+  	std::string getlogin();
+  	std::string getpostal_address();
+  	std::string getemail_address();
+  	std::string getphone_number();
+  	std::string getbirthday_date();
+  	std::string getfavorite();
+  	std::string getmeal();
+  	std::string getunderwear_color();
+  	std::string getdarkest_secret();
+
+
 	
 	private:
 
@@ -53,6 +70,9 @@ class Save_number{
 
 
 };
+	void lines();
+	void show_infomation(Save_number **contact, int contact_count);
+	void preview_phonebook(Save_number **contact, int contact_count);
 	int run_phonebook();
 	void putout(int line);
 	void add_contact(Save_number *contact);

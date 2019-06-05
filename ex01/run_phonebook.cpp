@@ -19,6 +19,7 @@ int run_phonebook(){
 	std::string SEARCH = "SEARCH";
 	std::string command;
 	std::getline(std::cin, command);
+	system("clear");
 	
 	// std::cout << command;
 	while (command[i] == exit[i] && command[i] && exit[i])
