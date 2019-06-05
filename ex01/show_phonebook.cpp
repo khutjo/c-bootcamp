@@ -33,31 +33,36 @@
     }
 
     void contact_contacts(Save_number *contact){
-        std::cout << "first name " << contact->getfirst_name() << "\n";
-        std::cout << "last name " << contact->getlast_name() << "\n";
-        std::cout << "nickname " << contact->getnickname() << "\n";
-        std::cout << "login " << contact->getlogin() << "\n";
-        std::cout << "postal address " << contact->getpostal_address() << "\n";
-        std::cout << "email address " << contact->getemail_address() << "\n";
-        std::cout << "phone number " << contact->getphone_number() << "\n";
-        std::cout << "birthday date " << contact->getbirthday_date() << "\n";
-        std::cout << "favorite anything " << contact->getfavorite() << "\n";
-        std::cout << "resent meal " << contact->getmeal() << "\n";
-        std::cout << "underwear color " << contact->getunderwear_color() << "\n";
-        std::cout << "darkest secret " << contact->getdarkest_secret() << "\n";
+        std::cout << "first name            " << contact->getfirst_name() << "\n";
+        std::cout << "last name             " << contact->getlast_name() << "\n";
+        std::cout << "nickname              " << contact->getnickname() << "\n";
+        std::cout << "login                 " << contact->getlogin() << "\n";
+        std::cout << "postal address        " << contact->getpostal_address() << "\n";
+        std::cout << "email address         " << contact->getemail_address() << "\n";
+        std::cout << "phone number          " << contact->getphone_number() << "\n";
+        std::cout << "birthday date         " << contact->getbirthday_date() << "\n";
+        std::cout << "favorite anything     " << contact->getfavorite() << "\n";
+        std::cout << "resent meal           " << contact->getmeal() << "\n";
+        std::cout << "underwear color       " << contact->getunderwear_color() << "\n";
+        std::cout << "darkest secret        " << contact->getdarkest_secret() << "\n";
     }
 
     void show_infomation(Save_number **contact, int contact_count){
         std::string command;
         int place;
-        std::cout << "\n--- which contact do you want to view   enter number 1 - " << 1+contact_count << " ---\n";
+        if (contact_count == 1)
+            std::cout << "\n--- you dont really have a choice enter 1 ---\n";
+        else
+            std::cout << "\n--- which contact do you want to view   enter number 1 - " << 1+contact_count << " ---\n";
 		std::getline(std::cin, command, '\n');
         if (command[0]){
             place = command[0] - '0';
             if (place > 0 || place <= contact_count){
                 contact_contacts(contact[--place]);
             }
+            else std::cout << "NOPED NOPE";
         }
+        else std::cout << "NOPED NOPE";        
     }
 
 void preview_phonebook(Save_number **contact, int contact_count){

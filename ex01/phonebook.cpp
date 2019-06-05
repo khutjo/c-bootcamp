@@ -39,7 +39,7 @@ int main(){
 		if (contact_count > 0){
 			preview_phonebook(contact, contact_count);
         	show_infomation(contact, contact_count);
-			std::cout << "welcome back do shit ADD, SEARCH, EXIT contact count " << contact_count << "\n";
+			std::cout << "\nwelcome back do shit ADD, SEARCH, EXIT contact count " << contact_count << "\n";
 		}
 		else
 			preview_phonebook(contact, contact_count);
