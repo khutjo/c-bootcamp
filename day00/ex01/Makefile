@@ -1,0 +1,16 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: event <marvin@42.fr>                       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/04 09:46:06 by event             #+#    #+#              #
+#    Updated: 2019/06/04 09:47:33 by event            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+all:
+	@echo "compiling phonebook"
+	clang++ -Wall -Wextra -Werror add_phonebook.cpp phonebook.cpp run_phonebook.cpp show_phonebook.cpp -o phonebook 
+	
