@@ -1,0 +1,35 @@
+#ifndef _FORM_HPP_
+#define _FORM_HPP_
+
+#include "Bureaucrat.hpp"
+
+class Form{
+	private :
+	
+		std::string Name;
+		std::string BureaucratName; 
+		int BureaucratGrade; 
+		bool SignState;
+		bool ExeStatus;
+
+	public :
+
+	Form();
+	~Form();
+	Form(std::string name);
+	Form(Form & src);
+	void operator=(Form const &src);
+
+	std::string getName();
+	std::string getBureaucratName(); 
+	int getBureaucratGrade();
+	bool getSignState();
+	int getGradeToSign();
+	int getGradeToExe();
+
+	virtual void beSigned(Bureaucrat &src) = 0;
+
+};
+
+std::ostream &operator<<(std::ostream &os, Form &src);
+#endif
